@@ -82,7 +82,7 @@ def send_email(recipients, gt_email, subject, content):
 def handle_file(uploaded_file):
 
     with open(uploaded_file, 'wbr+') as f:
-        print("Name:",f.name)
+        #print("Name:",f.name)
 
         if f.multiple_chunks(chunk_size=none):
             # then read chunk by chunk
@@ -104,7 +104,7 @@ return dict. Key (string) = FirstName, Lastname
              Value (string)= Email
 """
 def parse_csv(csv_file):
-    print(csv_file)
+    #print(csv_file)
     data = {}
 
     contents = csv_file.read().decode("utf-8")

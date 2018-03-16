@@ -154,10 +154,10 @@ def view_matches(request):
             p_match = po_match(project)
             project_match_list.extend([(project, p_match)])
 
-    print("the method is:", request.method)
+    #print("the method is:", request.method)
     if request.POST.get('matchstats'):
         matches = request.POST.get('matchstats')
-        print("we are getting matchstats dude")
+        #print("we are getting matchstats dude")
 
 
     return render(request, 'core/view_matches.html', {
@@ -236,7 +236,7 @@ def matchstats(request, slug):
     cur_desiredSkills = cur_project.desired_skills.all()
     matched_students = po_match(cur_project)
 
-    print("# of matched students:", len(matched_students))
+    #print("# of matched students:", len(matched_students))
 
     # match_list is a str object so parse it for usernames...
     # i'm sure theres a better way, couldn't pass the object
