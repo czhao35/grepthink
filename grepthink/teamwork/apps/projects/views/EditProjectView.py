@@ -48,6 +48,7 @@ def edit_project(request, slug):
         # Rights: GT, Professor, TA, Project Creator
         if request.user == project.creator or request.user == course.creator or request.user.profile.isGT or user_role == "ta":
             project.delete()
+            Alert.objects.filter(url=reverse('view_one_project', args=[project.slug])).delete()
         else:
             messages.warning(request,'Only project owner can delete project.')
 
